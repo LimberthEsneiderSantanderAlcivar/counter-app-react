@@ -1,16 +1,18 @@
 import React from 'react';
 //import React, { Fragment } from 'react';
 
-//Fragmen es para que sea un div el dual react va a "ignorar"
-//se usa porque el return debe tener un elemento html padre principal
-//que abarque todos los demas compoenentes
-//otra manera de evitar eso es no importar ni susar fragment
-//sino solo poner las etiquetas sin ningun texto dentro como se 
-//ve en la etiqueta que encierra los componentes ahi abajito
 const PrimeraApp = () =>{
+    //los booleanos no se imprimen en principio
+    //si se pone un arreglo los concatena uno tras otr sin la coma [1,2,3] = 123
+    //los obejtos dan error al imprimir en principio solo con las llaves, para eso se debe utilizar un JSON.stringify
+    const saludo = {
+        nombre:'Tomas',
+        edad: 32
+    };
     return (
         <>
-            <h1>Hola Mundo</h1>
+            <h1> Hola { saludo.nombre } </h1>
+            <pre> { JSON.stringify( saludo, null, 3) } </pre>
             <p>asdasdasd</p>
         </>
     );
