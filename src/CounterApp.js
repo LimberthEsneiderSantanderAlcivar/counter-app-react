@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 const CounterApp = ({value = 5})=>{
 
-    //hook de sue state
-    const [ counter, setCounter ] = useState(0);
+    //hook de use state
+    const [ counter, setCounter ] = useState(value);
 
     //handleAdd
     const handleAdd =(e)=>{
@@ -23,7 +23,7 @@ const CounterApp = ({value = 5})=>{
     return (
         <>
             <h1>CounterApp</h1>
-            <h2> { counter } </h2>
+            <h2>{counter}</h2>
             <button onClick={ handleSubstract }>-1</button>
             <button onClick={ handleReset }>Reset</button>
             <button onClick={ handleAdd }>+1</button>
@@ -33,4 +33,8 @@ const CounterApp = ({value = 5})=>{
 CounterApp.propTypes={
     value : PropTypes.number.isRequired
 }
+CounterApp.defaultProps={
+    value: 5
+}
+
 export default CounterApp;
